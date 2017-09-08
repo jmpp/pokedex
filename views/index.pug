@@ -1,0 +1,20 @@
+extends master.pug
+
+block content
+    <h1>Hello World!</h1>
+
+    <div class="row pokemons-list">
+        each pokemon in pokemonsList
+            <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+                    <img src="/images/pokemons/#{pokemon.id}.png" alt="#{pokemon.name}'s avatar'">
+                    <div class="caption">
+                        <h3>#{pokemon.name}</h3>
+                        <p>#{pokemon.weight} / #{pokemon.height}</p>
+                        <p>XP : #{pokemon.base_experience}</p>
+                        each attack in pokemon.attacks
+                            <span class="label label-danger">#{attack}</span> 
+                    </div>
+                </div>
+            </div>
+    </div>
